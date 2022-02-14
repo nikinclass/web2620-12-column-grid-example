@@ -1,1 +1,39 @@
 // Your styles go here
+.grid 
+{
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.fluid {
+    max-width: 100%;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.columns {
+    grid-column: span 12;
+
+}
+
+.grid::after, .row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.with-gutters .row:not(:first-child) .columns{
+    margin-top: 1em;
+
+}
+
+@media screen and (min-width: 576px) {
+    .one { grid-column: span 1; }
+    .two { grid-column: span 2; }
+
+}
